@@ -27,7 +27,7 @@ $a = array(
    1 => "Norge",
    2 => "Sverige",
    3 => "Danmark",
-   4 => "Finland",
+   4 => "Brasil",
    5 => "Russland",
    6 => 1
 ),
