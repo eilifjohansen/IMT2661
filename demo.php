@@ -146,7 +146,7 @@ function Goahead (number){
 ?>
 <TR><TD ALIGN=Center>
 The Quiz has finished
-<BR>Percentaje of correct responses: <?php print $percentaje ; ?> %
+<BR>Percentage of correct responses: <?php print $percentaje ; ?> %
 <p><A HREF="<?php print $address; ?>">Home Page</a>
 
 <?php } ?>
