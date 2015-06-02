@@ -73,15 +73,40 @@ if ($question==0){
         $percentaje= Round(100*$ok / $question);
         }
 ?>
-<!DOCTYPE html>
-<html lang="no">
-<head>
-	<meta charset="UTF-8">
-	<title>Quiz</title>
-	<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-	<H1><?php print "$title"; ?></H1>
+
+<HTML>
+  <HEAD>
+    <TITLE>Multiple Choice Questions:  <?php print $title; ?></TITLE>
+
+    <SCRIPT LANGUAGE='JavaScript'>
+    <!-- 
+    function Goahead (number){
+            if (document.percentaje.response.value==0){
+                    if (number==<?php print $a[$randval2][6] ; ?>){
+                            document.percentaje.response.value=1
+                            document.percentaje.question.value++
+                            document.percentaje.ok.value++
+                    }else{
+                            document.percentaje.response.value=1
+                            document.percentaje.question.value++
+                    }
+            }
+            if (number==<?php print $a[$randval2][6] ; ?>){
+                    document.question.response.value="Correct"
+            }else{
+                    document.question.response.value="Incorrect"
+            }
+    }
+    // -->
+    </SCRIPT>
+
+    <!-- Henter JS -->
+    <script src="js/script.js"></script>
+</HEAD>
+<BODY BGCOLOR=FFFFFF>
+
+<CENTER>
+<H1><?php print "$title"; ?></H1>
 <TABLE BORDER=0 CELLSPACING=5 WIDTH=500>
 
 <?php if ($question<$max){ ?>
@@ -133,7 +158,6 @@ The Quiz has finished
 </TD></TR>
 </TABLE>
 
-
-	<script src="js/script.js"></script>
-</body>
-</html>
+</CENTER>
+</BODY>
+</HTML>
