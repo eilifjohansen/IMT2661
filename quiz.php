@@ -74,11 +74,11 @@ if ($question==0){
         }
 ?>
 
-<HTML>
-  <HEAD>
-    <TITLE>Multiple Choice Questions:  <?php print $title; ?></TITLE>
+<html>
+  <head>
+    <title>Multiple Choice Questions:  <?php print $title; ?></title>
 
-    <SCRIPT LANGUAGE='JavaScript'>
+    <script language='JavaScript'>
     <!-- 
     function Goahead (number){
             if (document.percentaje.response.value==0){
@@ -98,21 +98,21 @@ if ($question==0){
             }
     }
     // -->
-    </SCRIPT>
+    </script>
 
     <!-- Henter JS -->
     <script src="js/script.js"></script>
-</HEAD>
-<BODY BGCOLOR=FFFFFF>
+</head>
+<body>
 
-<CENTER>
-<H1><?php print "$title"; ?></H1>
-<TABLE BORDER=0 CELLSPACING=5 WIDTH=500>
+<center>
+<h1><?php print "$title"; ?></h1>
+<table BORDER=0 CELLSPACING=5 WIDTH=500>
 
 <?php if ($question<$max){ ?>
 
-<TR><TD ALIGN=RIGHT>
-<FORM METHOD=POST NAME="percentaje" ACTION="<?php print $URL; ?>">
+<tr><td align="right">
+<form method="post" name="percentaje" action="<?php print $URL; ?>">
 
 <!--
 <BR>Percentaje of correct responses: <?php print $percentaje; ?> %-->
@@ -122,42 +122,41 @@ if ($question==0){
 <input type=hidden name=Randon value=<?php print $randval; ?>>
 <br><?php print $question+1; ?> / <?php print $max; ?>
 
-<HR>
-</TD></TR>
+<hr>
+</td></tr>
 
-<TR><TD>
-<FORM METHOD=POST NAME="question" ACTION="">
+<tr><td>
+<form method="post" name="question" action="">
 <?php print "<b>".$a[$randval2][0]."</b>"; ?>
  
-<BR>     <INPUT TYPE=radio NAME="option" VALUE="1"  onClick=" Goahead (1);"><?php print $a[$randval2][1] ; ?>
-<BR>     <INPUT TYPE=radio NAME="option" VALUE="2"  onClick=" Goahead (2);"><?php print $a[$randval2][2] ; ?>
+<br>     <input type="radio" name="option" value="1"  onClick=" Goahead (1);"><?php print $a[$randval2][1] ; ?>
+<br>     <input type="radio" name="option" value="2"  onClick=" Goahead (2);"><?php print $a[$randval2][2] ; ?>
 <?php if ($a[$randval2][3]!=""){ ?>
-<BR>     <INPUT TYPE=radio NAME="option" VALUE="3"  onClick=" Goahead (3);"><?php print $a[$randval2][3] ; } ?>
+<br>     <input type="radio" name="option" value="3"  onClick=" Goahead (3);"><?php print $a[$randval2][3] ; } ?>
 <?php if ($a[$randval2][4]!=""){ ?>
-<BR>     <INPUT TYPE=radio NAME="option" VALUE="4"  onClick=" Goahead (4);"><?php print $a[$randval2][4] ; } ?>
+<br>     <input type="radio" name="option" value="4"  onClick=" Goahead (4);"><?php print $a[$randval2][4] ; } ?>
 <?php if ($a[$randval2][5]!=""){ ?>
-<BR>     <INPUT TYPE=radio NAME="option" VALUE="5"  onClick=" Goahead (5);"><?php print $a[$randval2][5] ; } ?>
+<br>     <input type="radio" name="option" value="5"  onClick=" Goahead (5);"><?php print $a[$randval2][5] ; } ?>
   <!--
-<BR>     <input type=text name=response size=8>-->
+<br>     <input type=text name=response size=8>-->
 
-  <br><BR><input type=submit value="Neste">
-</FORM>
-
-</FORM>
+  <br><br><input type=submit value="Neste">
+</form>
+</form>
 
 <?php
 }else{
 ?>
-<TR><TD ALIGN=Center>
+<tr><td align="center">
 The Quiz has finished
-<BR>Percentaje of correct responses: <?php print $percentaje ; ?> %
-<p><A HREF="<?php print $address; ?>">Home Page</a>
+<br>Percentaje of correct responses: <?php print $percentaje ; ?> %
+<p><a HREF="<?php print $address; ?>">Home Page</a>
 
 <?php } ?>
 
-</TD></TR>
-</TABLE>
+</td></tr>
+</table>
 
-</CENTER>
-</BODY>
-</HTML>
+</center>
+</body>
+</html>
