@@ -6,7 +6,13 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<header>
+		
+	</header>
+
 	<a href="quiz.php">Start quiz</a>
+
+
 
 	<script src="js/script.js"></script>
 </body>
