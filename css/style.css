@@ -1,18 +1,67 @@
-* {margin: 0; padding: 0; outline: 0;}
+/* Global css */
+* {padding: 0; margin: 0; outline: 0;}
 
-html {
-
-}
-
-body {
-	background: url(../img/patternyellows.png) no-repeat center center fixed; 
+html,body{
+   	background: url(../img/patternyellows.png) no-repeat center center fixed; 
   	-webkit-background-size: cover;
  	-moz-background-size: cover;
  	-o-background-size: cover;
  	background-size: cover;
- 	overflow-x: hidden;
+}
+
+header {
+	margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+section {
+	margin-left: auto;
+    margin-right: auto;
+    width: 300px;
 }
 
 h1 {
-	color: #ffffff;
+	color: #fff;
+}
+
+
+p {
+	font-size: 20pt;
+}
+
+
+a button {
+	text-align: center;
+	width: 300px;
+	height: 50px;
+	margin-bottom: 20px;
+	color: #fff;
+	font-size: 1em;
+}
+
+#start {
+	background: url(../img/patterngreen.png) no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+ 	-o-background-size: cover;
+ 	background-size: cover;
+}
+
+#rankings {
+	background: url(../img/patternblue.png) no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+ 	-o-background-size: cover;
+ 	background-size: cover;
+}
+
+#settings {
+	background: url(../img/patternpurple.png) no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+ 	-o-background-size: cover;
+ 	background-size: cover;
 }
