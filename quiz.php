@@ -15,7 +15,7 @@ error_reporting(0);
 //
 // #########################################
 //      CONFIGURATION
-$title = "Vår quiz!";
+$title = "YOG Lillehammer 2016 Quiz";
 $address = ".";
 $randomizequestions ="yes"; // set up as "no" to show questions without randomization
 //    END CONFIGURATION
@@ -28,7 +28,6 @@ $a = array(
    2 => "Sverige",
    3 => "Danmark",
    4 => "Brasil",
-   5 => "Russland",
    6 => 1
 ),
 2 => array(
@@ -44,6 +43,7 @@ $a = array(
    1 => "2014",
    2 => "2015",
    3 => "2016",
+   4 => "2017",
    6 => 3
 ),
 );
@@ -76,9 +76,14 @@ if ($question==0){
 
 <html>
   <head>
-    <title>Multiple Choice Questions:  <?php print $title; ?></title>
-
-    <script language='JavaScript'>
+    <title><?php print $title; ?></title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#E5B33A">
+    <meta name="theme-color" content="#E5B33A">
+    <script src="js/script.js"></script>
+    <SCRIPT LANGUAGE='JavaScript'>
     <!-- 
     function Goahead (number){
             if (document.percentaje.response.value==0){
@@ -98,65 +103,89 @@ if ($question==0){
             }
     }
     // -->
-    </script>
+    </SCRIPT>
 
     <!-- Henter JS -->
     <script src="js/script.js"></script>
 </head>
 <body>
 
-<center>
-<h1><?php print "$title"; ?></h1>
-<table BORDER=0 CELLSPACING=5 WIDTH=500>
+<section>
+    <!--<h1><?php print "$title"; ?></h1>-->
+    <table BORDER="0" CELLSPACING="5">
 
-<?php if ($question<$max){ ?>
+    <?php if ($question<$max){ ?>
 
-<tr><td align="right">
-<form method="post" name="percentaje" action="<?php print $URL; ?>">
+    <tr><td align="center">
+      <br><?php print $question+1; ?> / <?php print $max; ?>
+    <hr>
+    </td></tr>
 
-<!--
-<BR>Percentaje of correct responses: <?php print $percentaje; ?> %-->
-<input type=hidden name=response value=0>
-<input type=hidden name=question value=<?php print $question; ?>>
-<input type=hidden name=ok value=<?php print $ok; ?>>
-<input type=hidden name=Randon value=<?php print $randval; ?>>
-<br><?php print $question+1; ?> / <?php print $max; ?>
+    <tr><td>
+    <form method="post" name="question" action="">
+    <p id="question"><?php print "<b>".$a[$randval2][0]."</b>"; ?></p>
+    
+    <div class="segmented">
 
-<hr>
-</td></tr>
+        <div class="space">
+        <input type="radio" name="option" value="<?php print $a[$randval2][1] ; ?>" id="q1" value="1"  onClick=" Goahead (1);">
+        <label onClick="clicked()" for="q1"><?php print $a[$randval2][1] ; ?></label>
+        </div>
 
-<tr><td>
-<form method="post" name="question" action="">
-<?php print "<b>".$a[$randval2][0]."</b>"; ?>
- 
-<br>     <input type="radio" name="option" value="1"  onClick=" Goahead (1);"><?php print $a[$randval2][1] ; ?>
-<br>     <input type="radio" name="option" value="2"  onClick=" Goahead (2);"><?php print $a[$randval2][2] ; ?>
-<?php if ($a[$randval2][3]!=""){ ?>
-<br>     <input type="radio" name="option" value="3"  onClick=" Goahead (3);"><?php print $a[$randval2][3] ; } ?>
-<?php if ($a[$randval2][4]!=""){ ?>
-<br>     <input type="radio" name="option" value="4"  onClick=" Goahead (4);"><?php print $a[$randval2][4] ; } ?>
-<?php if ($a[$randval2][5]!=""){ ?>
-<br>     <input type="radio" name="option" value="5"  onClick=" Goahead (5);"><?php print $a[$randval2][5] ; } ?>
-  <!--
-<br>     <input type=text name=response size=8>-->
+        <div class="space">
+        <input type="radio" name="option" value="<?php print $a[$randval2][1] ; ?>" id="q2" value="2"  onClick=" Goahead (2);">
+        <label onClick="clicked()" for="q2"><?php print $a[$randval2][2] ; ?></label>
+        </div>
 
-  <br><br><input type=submit value="Neste">
-</form>
-</form>
+        <div class="space">
+        <input type="radio" name="option" value="<?php print $a[$randval2][1] ; ?>" id="q3" value="3"  onClick=" Goahead (3);">
+        <label onClick="clicked()" for="q3"><?php print $a[$randval2][3] ; ?></label>
+        </div>
 
-<?php
-}else{
-?>
-<tr><td align="center">
-The Quiz has finished
-<br>Percentaje of correct responses: <?php print $percentaje ; ?> %
-<p><a HREF="<?php print $address; ?>">Home Page</a>
+        <div class="space">
+        <input type="radio" name="option" value="<?php print $a[$randval2][1] ; ?>" id="q4" value="4"  onClick=" Goahead (4);">
+        <label onClick="clicked()" for="q4"><?php print $a[$randval2][4] ; ?></label>
+        </div>
 
-<?php } ?>
+        <!--<input type=text name=response size=8>-->
+    </div>
 
-</td></tr>
-</table>
+     </form>
+     <form method="post" name="percentaje" action="<?php print $URL; ?>">
+        <!--
+        <BR>Percentaje of correct responses: <?php print $percentaje; ?> %-->
+        <input type=hidden name=response value=0>
+        <input type=hidden name=question value=<?php print $question; ?>>
+        <input type=hidden name=ok value=<?php print $ok; ?>>
+        <input type=hidden name=Randon value=<?php print $randval; ?>>
+        <input type="submit" class="button initiallyHidden" id="next" value="Next">
+    </form>
 
-</center>
+    <?php
+    }else{
+    ?>
+    <tr><td align="center">
+    <p>Quizen er ferdig!
+    <br>Du fikk: <?php print $percentaje ; ?> % riktig!
+    <br><br>
+    Del ditt resultat med andre!</p><br>
+
+    <button type="button" class="button" id="rankings">Del på Facebook</button>
+    <br>
+    <button type="button" class="button" id="rankings">Del på Twitter</button>
+    <br>
+    <button type="button" class="button" id="rankings">Del på Google +</button>
+    <br>
+    <a href="<?php print $address; ?>">
+        <button type="button" class="button" id="settings">Avslutt quizen</button>
+      </a>
+
+    <?php } ?>
+
+    </td></tr>
+    </table>
+
+  </section>
+
 </body>
 </html>
