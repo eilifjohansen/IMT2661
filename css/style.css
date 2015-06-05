@@ -63,7 +63,7 @@ p {
 }
 
 #next {
-    background: #5C9C45 url(../img/patternblue.png) no-repeat center center fixed; 
+    background: #4B7EB7 url(../img/patternblue.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -140,7 +140,7 @@ p {
   padding-left: 15px;
   padding-right: 15px;
   cursor: pointer;
-  background: #5C9C45 url(../img/pattergreen.png) no-repeat center center fixed; 
+  background: #5C9C45 url(../img/patterngreen.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
