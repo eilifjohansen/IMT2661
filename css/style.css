@@ -55,7 +55,7 @@ p {
 }
 
 #start {
-	background: url(../img/patterngreen.png) no-repeat center center fixed; 
+	background: #5C9C45 url(../img/patterngreen.png) no-repeat center center fixed; 
   	-webkit-background-size: cover;
  	-moz-background-size: cover;
  	-o-background-size: cover;
@@ -63,7 +63,7 @@ p {
 }
 
 #next {
-    background: url(../img/patterngreen.png) no-repeat center center fixed; 
+    background: #5C9C45 url(../img/patternblue.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -74,7 +74,7 @@ p {
 }
 
 #rankings {
-	background: url(../img/patternblue.png) no-repeat center center fixed; 
+	background: #4B7EB7 url(../img/patternblue.png) no-repeat center center fixed; 
   	-webkit-background-size: cover;
  	-moz-background-size: cover;
  	-o-background-size: cover;
@@ -82,7 +82,7 @@ p {
 }
 
 #settings {
-	background: url(../img/patternpurple.png) no-repeat center center fixed; 
+	background: #AF2A6B url(../img/patternpurple.png) no-repeat center center fixed; 
   	-webkit-background-size: cover;
  	-moz-background-size: cover;
  	-o-background-size: cover;
@@ -90,6 +90,8 @@ p {
 }
 
 .initiallyHidden { visibility: hidden; }
+.initiallyGone { display: none; }
+
 
 .space {
     margin-bottom: 20px;
@@ -101,7 +103,7 @@ p {
    display: none;
 
 }
-.segmented label {
+.segmented .label1 {
   display: block;
   text-align: center;
   border: outset 1px silver;
@@ -111,7 +113,7 @@ p {
   padding-left: 15px;
   padding-right: 15px;
   cursor: pointer;
-  background: url(../img/patternblue.png) no-repeat center center fixed; 
+  background: #4B7EB7 url(../img/patternblue.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -119,7 +121,62 @@ p {
     color: #fff;
 }
 
-.segmented input:checked + label {
+.segmented input:checked + .label1 {
+  border: inset 1px silver;   
+    background: #555 url(../img/pattern.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.segmented .label2 {
+  display: block;
+  text-align: center;
+  border: outset 1px silver;
+  max-width: 300px;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: pointer;
+  background: #5C9C45 url(../img/pattergreen.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: #fff;
+}
+
+.segmented input:checked + .label2 {
+   border: inset 1px silver;   
+    background: #555 url(../img/pattern.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+.segmented .label3 {
+  display: block;
+  text-align: center;
+  border: outset 1px silver;
+  max-width: 300px;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: pointer;
+  background: #AF2A6B url(../img/patternpurple.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: #fff;
+}
+
+.segmented input:checked + .label3 {
   border: inset 1px silver;   
     background: #555 url(../img/pattern.png) no-repeat center center fixed; 
     -webkit-background-size: cover;

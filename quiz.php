@@ -103,6 +103,7 @@ if ($question==0){
             }
     }
     // -->
+
     </SCRIPT>
 
     <!-- Henter JS -->
@@ -125,30 +126,113 @@ if ($question==0){
     <form method="post" name="question" action="">
     <p id="question"><?php print "<b>".$a[$randval2][0]."</b>"; ?></p>
     
-    <div class="segmented">
+    <div id="before" class="segmented">
 
         <div class="space">
-        <input type="radio" name="option" value="<?php print $a[$randval2][1] ; ?>" id="q1" value="1"  onClick=" Goahead (1);">
-        <label onClick="clicked()" for="q1"><?php print $a[$randval2][1] ; ?></label>
+        <input type="radio" name="option" value="<?php print $a[$randval2][1] ; ?>" id="1" value="1"  onClick=" Goahead (1);">
+        <label class="label1" onClick="clicked1()" for="1"><?php print $a[$randval2][1] ; ?></label>
         </div>
 
         <div class="space">
-        <input type="radio" name="option" value="<?php print $a[$randval2][1] ; ?>" id="q2" value="2"  onClick=" Goahead (2);">
-        <label onClick="clicked()" for="q2"><?php print $a[$randval2][2] ; ?></label>
+        <input type="radio" name="option" value="<?php print $a[$randval2][1] ; ?>" id="2" value="2"  onClick=" Goahead (2);">
+        <label class="label1" onClick="clicked2()" for="2"><?php print $a[$randval2][2] ; ?></label>
         </div>
 
         <div class="space">
-        <input type="radio" name="option" value="<?php print $a[$randval2][1] ; ?>" id="q3" value="3"  onClick=" Goahead (3);">
-        <label onClick="clicked()" for="q3"><?php print $a[$randval2][3] ; ?></label>
+        <input type="radio" name="option" value="<?php print $a[$randval2][1] ; ?>" id="3" value="3"  onClick=" Goahead (3);">
+        <label class="label1" onClick="clicked3()" for="3"><?php print $a[$randval2][3] ; ?></label>
         </div>
-
+        
         <div class="space">
-        <input type="radio" name="option" value="<?php print $a[$randval2][1] ; ?>" id="q4" value="4"  onClick=" Goahead (4);">
-        <label onClick="clicked()" for="q4"><?php print $a[$randval2][4] ; ?></label>
+        <input type="radio" name="option" value="<?php print $a[$randval2][1] ; ?>" id="4" value="4"  onClick=" Goahead (4);">
+        <label class="label1" onClick="clicked4()" for="4"><?php print $a[$randval2][4] ; ?></label>
         </div>
 
-        <!--<input type=text name=response size=8>-->
+
+
+       <?php 
+      //{ if (1==$a[$randval2][6]){
+      //document.getElementById('1').style.visibility = 'visible';
+      //}}  ?>
+
+  <div id="riktig" class="space initiallyHidden">
+    <input type="radio" type=text name=response >
+         <input type="radio" name="option" value="<?php print $a[$randval2][6] ; ?>" id="q5">
+        <label for="q5">Riktig svar er nr: <?php print $a[$randval2][6] ; ?></label>
+      </div>
+
     </div>
+
+
+      <div id="after" class="segmented initiallyGone">
+        
+           <!-- Feil -->
+
+        <?php { if (1!=$a[$randval2][6]){ ?> <!-- Feil -->
+        <div id="a" class="space initiallyGone">
+        <input type="radio" name="option" value="<?php print $a[$randval2][1] ; ?>" id="1" value="1"  onClick=" Goahead (1);">
+        <label  class="label3" for="1"><?php print $a[$randval2][1] ; ?></label>
+        </div>
+        <?php }} ?>
+
+  
+        <?php { if (2!=$a[$randval2][6]){ ?>  <!-- Feil -->
+        <div id="b" class="space initiallyGone">
+        <input type="radio" name="option" value="<?php print $a[$randval2][1] ; ?>" id="2" value="2"  onClick=" Goahead (2);">
+        <label class="label3" for="2"><?php print $a[$randval2][2] ; ?></label>
+        </div>
+        <?php }} ?>
+
+      
+        <?php { if (3!=$a[$randval2][6]){ ?>  <!-- Feil -->
+        <div id="c" class="space initiallyGone">
+        <input type="radio" name="option" value="<?php print $a[$randval2][1] ; ?>" id="3" value="3"  onClick=" Goahead (3);">
+        <label  class="label3" for="3"><?php print $a[$randval2][3] ; ?></label>
+        </div>
+        <?php }} ?>
+        
+  
+        <?php { if (4!=$a[$randval2][6]){ ?> <!-- Feil --> 
+        <div id="d" class="space initiallyGone">
+        <input type="radio" name="option" value="<?php print $a[$randval2][1] ; ?>" id="4" value="4"  onClick=" Goahead (4);">
+        <label  class="label3" for="4"><?php print $a[$randval2][4] ; ?></label>
+        </div>
+        <?php }} ?>
+
+         <!-- Slutt feil -->
+        <!-- Riktig -->
+
+        <?php { if (1==$a[$randval2][6]){ ?> <!-- Riktig -->
+        <div class="space">
+        <input type="radio" name="option" value="<?php print $a[$randval2][1] ; ?>" id="1" value="1"  onClick=" Goahead (1);">
+        <label class="label2" for="1"><?php print $a[$randval2][1] ; ?></label>
+        </div>
+        <?php }} ?>
+
+        <?php { if (2==$a[$randval2][6]){ ?>  <!-- Riktig -->
+        <div class="space">
+        <input type="radio" name="option" value="<?php print $a[$randval2][1] ; ?>" id="2" value="2"  onClick=" Goahead (2);">
+        <label class="label2" for="2"><?php print $a[$randval2][2] ; ?></label>
+        </div>
+        <?php }} ?>
+
+        <?php { if (3==$a[$randval2][6]){ ?>  <!-- Riktig -->
+        <div class="space">
+        <input type="radio" name="option" value="<?php print $a[$randval2][1] ; ?>" id="3" value="3"  onClick=" Goahead (3);">
+        <label class="label2" for="3"><?php print $a[$randval2][3] ; ?></label>
+        </div>
+        <?php }} ?>
+
+        <?php { if (4==$a[$randval2][6]){ ?> <!-- Riktig --> 
+        <div class="space">
+        <input type="radio" name="option" value="<?php print $a[$randval2][1] ; ?>" id="4" value="4"  onClick=" Goahead (4);">
+        <label class="label2" for="4"><?php print $a[$randval2][4] ; ?></label>
+        </div>
+        <?php }} ?>
+
+        <!-- Slutt riktig -->
+
+      </div>
 
      </form>
      <form method="post" name="percentaje" action="<?php print $URL; ?>">
